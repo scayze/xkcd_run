@@ -1,40 +1,109 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://res/intro_pretty.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+
+font_path = "res://fonts/Connection/Connection.otf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+
+gradient = SubResource( 3 )
+width = 2048
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "start"
+length = 1.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -3.362, 1 ),
+"update": 0,
+"values": [ Vector2( 1.7, 1.7 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -590.137, 444.916 ), Vector2( 512, 300 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Sprite2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -613.369, 374.57 ), Vector2( -613.369, 374.57 ), Vector2( -900, 374.57 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=6]
+
+font_path = "res://fonts/Connection/Connection.otf"
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="World" type="Node2D"]
 
 script = ExtResource( 1 )
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Score" type="Label" parent="."]
 
-anchor_mode = 0
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
-smoothing_enabled = false
-smoothing_speed = 5.0
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing", "Transform" ]
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 70.9398, 499.46 )
-_sections_unfolded = [ "Transform", "collision" ]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 137.0
+margin_top = 3.0
+margin_right = 173.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "123"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="HighScore" type="Label" parent="."]
 
@@ -54,25 +123,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Score" type="Label" parent="."]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 137.0
-margin_top = 3.0
-margin_right = 177.0
-margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "10"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 193.931, 488.38 )
+_sections_unfolded = [ "Pickable", "Transform", "collision" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -81,5 +135,83 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Sprite2" type="Sprite" parent="."]
+
+position = Vector2( -613.369, 374.57 )
+scale = Vector2( 4.32884, 4.7159 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+position = Vector2( -2058.52, -281.856 )
+scale = Vector2( 1.51425, 1703.07 )
+z = -300
+texture = SubResource( 4 )
+centered = false
+_sections_unfolded = [ "Transform", "Z" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("../Camera2D")
+anims/start = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+position = Vector2( -590.137, 444.916 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1.7, 1.7 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 5.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Button" type="Button" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1328.0
+margin_top = 349.0
+margin_right = -978.0
+margin_bottom = 430.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 1
+shortcut = null
+group = null
+text = "Start"
+flat = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="Button" to="." method="start"]
 
 
