@@ -1,36 +1,59 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://res/explosion/M484ExplosionSet2.png" type="Texture" id=1]
-[ext_resource path="res://res/explosion/M484ExplosionSet3.png" type="Texture" id=2]
-[ext_resource path="res://res/explosion/M484ExplosionSet4.png" type="Texture" id=3]
-[ext_resource path="res://res/explosion/M484ExplosionSet5.png" type="Texture" id=4]
-[ext_resource path="res://res/explosion/M484ExplosionSet6.png" type="Texture" id=5]
-[ext_resource path="res://res/explosion/M484ExplosionSet7.png" type="Texture" id=6]
-[ext_resource path="res://res/explosion/M484ExplosionSet8.png" type="Texture" id=7]
-[ext_resource path="res://res/explosion/M484ExplosionSet9.png" type="Texture" id=8]
-[ext_resource path="res://res/explosion/M484ExplosionSet10.png" type="Texture" id=9]
-[ext_resource path="res://res/explosion/M484ExplosionSet11.png" type="Texture" id=10]
-[ext_resource path="res://res/explosion/M484ExplosionSet12.png" type="Texture" id=11]
-[ext_resource path="res://res/explosion/M484ExplosionSet13.png" type="Texture" id=12]
-[ext_resource path="res://res/explosion/M484ExplosionSet14.png" type="Texture" id=13]
-[ext_resource path="res://res/explosion/M484ExplosionSet15.png" type="Texture" id=14]
+[ext_resource path="res://Utils/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://res/explosion/M484ExplosionSet2.png" type="Texture" id=2]
+[ext_resource path="res://res/explosion/M484ExplosionSet3.png" type="Texture" id=3]
+[ext_resource path="res://res/explosion/M484ExplosionSet4.png" type="Texture" id=4]
+[ext_resource path="res://res/explosion/M484ExplosionSet5.png" type="Texture" id=5]
+[ext_resource path="res://res/explosion/M484ExplosionSet6.png" type="Texture" id=6]
+[ext_resource path="res://res/explosion/M484ExplosionSet7.png" type="Texture" id=7]
+[ext_resource path="res://res/explosion/M484ExplosionSet8.png" type="Texture" id=8]
+[ext_resource path="res://res/explosion/M484ExplosionSet9.png" type="Texture" id=9]
+[ext_resource path="res://res/explosion/M484ExplosionSet10.png" type="Texture" id=10]
+[ext_resource path="res://res/explosion/M484ExplosionSet11.png" type="Texture" id=11]
+[ext_resource path="res://res/explosion/M484ExplosionSet12.png" type="Texture" id=12]
+[ext_resource path="res://res/explosion/M484ExplosionSet13.png" type="Texture" id=13]
+[ext_resource path="res://res/explosion/M484ExplosionSet14.png" type="Texture" id=14]
+[ext_resource path="res://res/explosion/M484ExplosionSet15.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 20.0
 } ]
 
-[node name="Explosion" type="AnimatedSprite"]
+[sub_resource type="CircleShape2D" id=2]
 
+custom_solver_bias = 0.0
+radius = 54.3935
+
+[node name="Explosion" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+position = Vector2( 1.22942, -44.8741 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 12
 playing = true
-_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="."]
+
+position = Vector2( 1.22942, -44.8741 )
+shape = SubResource( 2 )
 
 

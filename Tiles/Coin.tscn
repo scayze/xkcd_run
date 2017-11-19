@@ -19,13 +19,13 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 21.2041, 24.4768 )
 
 [node name="Coin" type="Area2D"]
 
@@ -40,10 +40,12 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
+scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 9
+frame = 8
 playing = true
+_sections_unfolded = [ "Transform", "Z" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

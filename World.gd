@@ -3,6 +3,8 @@ extends Node
 var score = 0
 var highscore = 0
 onready var anim = get_node("AnimationPlayer")
+onready var music = get_node("music")
+onready var background = get_node("background")
 onready var l_score = get_node("Score")
 onready var l_highscore = get_node("HighScore")
 var scene_start = preload("res://Parts/Part.tscn")
@@ -17,18 +19,26 @@ var parts = []
 
 func restart():
 	playing = false
+	for p in parts:
+		p.queue_free()
+	parts.clear()
 	var part = scene_start.instance()
 	parts.append(part)
+	music.reset()
+	background.reset()
 	add_child(part)
 	spawn_tile()
 
+func level_up():
+	background.up()
+	music.up()
 
 func start():
-	print("s")
 	if playing: return
 	time = 0
 	score = 0
 	speed = 250
+	print("starting game")
 	anim.play("start")
 	playing = true
 
@@ -39,7 +49,7 @@ func spawn_tile():
 	part.position = Vector2(1024,0)
 	parts.append(part)
 	add_child(part)
-	print("spawned")
+	print("WorldPart spawned")
 
 func _ready():
 	var dir = Directory.new()
@@ -63,10 +73,12 @@ func _ready():
 func _process(delta):
 	if(playing): 
 		time += delta
+		if time > 1:
+			time = 0 
+			score += 1
 		speed += delta
-		score = int(time)
 		l_score.text = str(score)
-	if highscore < score: score = highscore 
+	if highscore < score: highscore = score 
 	
 	if Input.is_action_just_pressed("start"):
 		start()

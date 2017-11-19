@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://res/player_anim/BrachoNacho0.png" type="Texture" id=2]
@@ -7,6 +7,16 @@
 [ext_resource path="res://res/player_anim/BrachoNacho3.png" type="Texture" id=5]
 [ext_resource path="res://res/player_anim/BrachoNacho4.png" type="Texture" id=6]
 [ext_resource path="res://res/player_anim/BrachoNacho5.png" type="Texture" id=7]
+[ext_resource path="res://res/player_anim/jump/JumpyDumpyFlumpyMampy0.png" type="Texture" id=8]
+[ext_resource path="res://res/player_anim/jump/JumpyDumpyFlumpyMampy1.png" type="Texture" id=9]
+[ext_resource path="res://res/player_anim/jump/JumpyDumpyFlumpyMampy2.png" type="Texture" id=10]
+[ext_resource path="res://res/player_anim/jump/JumpyDumpyFlumpyMampy3.png" type="Texture" id=11]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara0.png" type="Texture" id=12]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara1.png" type="Texture" id=13]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara2.png" type="Texture" id=14]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara3.png" type="Texture" id=15]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara4.png" type="Texture" id=16]
+[ext_resource path="res://res/player_anim/fatty/FattyKonfettiCarbonara5.png" type="Texture" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -22,30 +32,73 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 45.5035, 31.7526 )
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.05
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pickable", "collision" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 jump_height = 480
 gravity = 13.0
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="run" type="AnimatedSprite" parent="."]
 
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"player",
+]]
 
 position = Vector2( 2.88519, 13.127 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="jump" type="AnimatedSprite" parent="."]
+
+visible = false
+position = Vector2( 6, 0 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="eat" type="AnimatedSprite" parent="."]
+
+visible = false
+position = Vector2( 6, 3 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 4 )
+animation = "default"
+frame = 3
+playing = true
 _sections_unfolded = [ "Transform" ]
 
 
