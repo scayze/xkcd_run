@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://res/player_anim/BrachoNacho0.png" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://res/player_anim/kick/wat4.png" type="Texture" id=22]
 [ext_resource path="res://res/player_anim/kick/wat5.png" type="Texture" id=23]
 [ext_resource path="res://res/player_anim/kick/wat6.png" type="Texture" id=24]
+[ext_resource path="res://sounds/Eat.wav" type="AudioStream" id=25]
+[ext_resource path="res://sounds/jump.wav" type="AudioStream" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -183,6 +185,26 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="sound_eat" type="AudioStreamPlayer2D" parent="."]
+
+stream = ExtResource( 25 )
+volume_db = -30.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+
+stream = ExtResource( 26 )
+volume_db = -30.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="animation_finished" from="eat" to="." method="_on_eat_animation_finished"]
 

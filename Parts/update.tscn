@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tiles/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tiles/DragShwag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/Spike.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/Coin.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512, 590 )
+_sections_unfolded = [ "Transform" ]
+platform = false
+size = 340
+
+[node name="DragShwag" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 342.919, 547.608 )
+
+[node name="DragShwag2" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 618.854, 545.392 )
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spike" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 480.045, 553.71 )
+
+[node name="Coin" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 309.39, 449.352 )
+
+[node name="Coin3" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 406.381, 368.321 )
+
+[node name="Coin4" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 526.699, 365.866 )
+
+[node name="Coin5" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 934.308, 545.116 )
+
+[node name="Coin6" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 933.081, 459.174 )
+
+[node name="Coin7" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 934.308, 370.777 )
+
+[node name="Coin2" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 628.602, 450.58 )
+
+

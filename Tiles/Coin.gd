@@ -5,13 +5,17 @@ func _ready():
 
 func effect():
 	get_tree().get_root().get_node("World").score += 69
+	get_node("AudioStreamPlayer").play()
 	print("coin collected")
 
 func _physics_process(delta):
 	if Engine.is_editor_hint(): return
+	if not monitoring: return
 	for overlap in get_overlapping_bodies():
 		if overlap.is_in_group("player"):
 			effect()
-			queue_free()
+			monitoring = false
+			visible = false
+			#queue_free()
 
 

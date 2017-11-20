@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tiles/Coin.gd" type="Script" id=1]
 [ext_resource path="res://res/coin/CoinShwaboing00.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://res/coin/CoinShwaboing08.png" type="Texture" id=10]
 [ext_resource path="res://res/coin/CoinShwaboing09.png" type="Texture" id=11]
 [ext_resource path="res://res/coin/CoinShwaboing10.png" type="Texture" id=12]
+[ext_resource path="res://sounds/coin.wav" type="AudioStream" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -43,12 +44,20 @@ script = ExtResource( 1 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 10
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform", "Z" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+stream = ExtResource( 13 )
+volume_db = -30.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

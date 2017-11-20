@@ -15,6 +15,8 @@ onready var sprite_kick = get_node("kick")
 onready var sprite_run = get_node("run")
 onready var sprite_jump = get_node("jump")
 onready var sprite_eat = get_node("eat")
+onready var sound_jump = get_node("sound_jump")
+onready var sound_eat = get_node("sound_eat")
 onready var shape = get_node("shape")
 
 var state = "run"
@@ -44,6 +46,7 @@ func change_state(p_state):
 		sprite_eat.visible = false
 		sprite_kick.visible = false
 	elif state == "jump":
+		sound_jump.play()
 		velocity.y = -15
 		time_till_jump = 0
 		sprite_jump.frame = 0
@@ -52,6 +55,7 @@ func change_state(p_state):
 		sprite_eat.visible = false
 		sprite_kick.visible = false
 	elif state == "eat":
+		sound_eat.play()
 		sprite_eat.frame = 0
 		sprite_run.visible = false
 		sprite_jump.visible = false
@@ -91,10 +95,6 @@ func _physics_process(delta):
 	
 	for i in range(get_slide_count()):
 		var c = get_slide_collision(i)
-		if c.collider.is_in_group("platform"):
-			#velocity.y = 0
-			pass
-			#position.y -=10
 		if c.collider.is_in_group("jump"):
 			print("lul")
 			change_state("jump")
