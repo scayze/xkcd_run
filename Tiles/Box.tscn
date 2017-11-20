@@ -6,14 +6,14 @@
 [sub_resource type="SegmentShape2D" id=1]
 
 custom_solver_bias = 0.0
-a = Vector2( -48, 0 )
-b = Vector2( 48, 0 )
+a = Vector2( 48, 0 )
+b = Vector2( -48, 0 )
 
 [sub_resource type="SegmentShape2D" id=2]
 
 custom_solver_bias = 0.0
-a = Vector2( 0, 0 )
-b = Vector2( 0, 10 )
+a = Vector2( 48, 0 )
+b = Vector2( -48, 0 )
 
 [node name="Box" type="StaticBody2D" groups=[
 "platform",
@@ -27,6 +27,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
+platform = true
 size = 32
 
 [node name="Sprite" type="Sprite" parent="."]

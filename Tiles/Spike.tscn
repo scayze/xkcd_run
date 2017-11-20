@@ -1,0 +1,75 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Tiles/Spike.gd" type="Script" id=1]
+[ext_resource path="res://res/spike/MikeySpikey00.png" type="Texture" id=2]
+[ext_resource path="res://res/spike/MikeySpikey01.png" type="Texture" id=3]
+[ext_resource path="res://res/spike/MikeySpikey02.png" type="Texture" id=4]
+[ext_resource path="res://res/spike/MikeySpikey03.png" type="Texture" id=5]
+[ext_resource path="res://res/spike/MikeySpikey04.png" type="Texture" id=6]
+[ext_resource path="res://res/spike/MikeySpikey05.png" type="Texture" id=7]
+[ext_resource path="res://res/spike/MikeySpikey06.png" type="Texture" id=8]
+[ext_resource path="res://res/spike/MikeySpikey07.png" type="Texture" id=9]
+[ext_resource path="res://res/spike/MikeySpikey08.png" type="Texture" id=10]
+[ext_resource path="res://res/spike/MikeySpikey09.png" type="Texture" id=11]
+[ext_resource path="res://res/spike/MikeySpikey10.png" type="Texture" id=12]
+[ext_resource path="res://res/spike/MikeySpikey11.png" type="Texture" id=13]
+[ext_resource path="res://res/spike/MikeySpikey12.png" type="Texture" id=14]
+[ext_resource path="res://res/spike/MikeySpikey13.png" type="Texture" id=15]
+[ext_resource path="res://res/spike/MikeySpikey14.png" type="Texture" id=16]
+[ext_resource path="res://res/spike/MikeySpikey15.png" type="Texture" id=17]
+[ext_resource path="res://res/spike/MikeySpikey16.png" type="Texture" id=18]
+[ext_resource path="res://res/spike/MikeySpikey17.png" type="Texture" id=19]
+[ext_resource path="res://res/spike/MikeySpikey18.png" type="Texture" id=20]
+[ext_resource path="res://res/spike/MikeySpikey19.png" type="Texture" id=21]
+[ext_resource path="res://res/spike/MikeySpikey20.png" type="Texture" id=22]
+[ext_resource path="res://res/spike/MikeySpikey21.png" type="Texture" id=23]
+[ext_resource path="res://res/spike/MikeySpikey22.png" type="Texture" id=24]
+[ext_resource path="res://res/spike/MikeySpikey23.png" type="Texture" id=25]
+[ext_resource path="res://res/spike/MikeySpikey24.png" type="Texture" id=26]
+[ext_resource path="res://res/spike/MikeySpikey25.png" type="Texture" id=27]
+[ext_resource path="res://res/spike/MikeySpikey26.png" type="Texture" id=28]
+[ext_resource path="res://res/spike/MikeySpikey27.png" type="Texture" id=29]
+[ext_resource path="res://res/spike/MikeySpikey28.png" type="Texture" id=30]
+[ext_resource path="res://res/spike/MikeySpikey29.png" type="Texture" id=31]
+[ext_resource path="res://res/spike/MikeySpikey30.png" type="Texture" id=32]
+[ext_resource path="res://res/spike/MikeySpikey31.png" type="Texture" id=33]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.5192, 45.448 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="Spike" type="Area2D"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 23
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+

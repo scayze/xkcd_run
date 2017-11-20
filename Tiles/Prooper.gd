@@ -20,9 +20,9 @@ func drop():
 func _physics_process(delta):
 	position.x -= speed*delta
 	
-	var bomb_dist = abs(position.y - player.position.y) - 30
+	var bomb_dist = abs(position.y - player.position.y) - 50
 	var bomb_fall_time = bomb_dist / bomb_speed
-	var bomb_travel_length = bomb_fall_time * 250
+	var bomb_travel_length = bomb_fall_time * get_parent().get_parent().speed
 	var distance = global_position.x - player.global_position.x
 	if distance < bomb_travel_length and not has_dropped: drop()
 

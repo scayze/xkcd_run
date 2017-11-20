@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tiles/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tiles/RainbowCoin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/Spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tiles/Chicken.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512, 590 )
+_sections_unfolded = [ "Transform" ]
+platform = false
+size = 340
+
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 513.327, 465.438 )
+_sections_unfolded = [ "Transform" ]
+size = 340
+
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512.327, 350.439 )
+_sections_unfolded = [ "Transform" ]
+size = 340
+
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 513.327, 235.439 )
+_sections_unfolded = [ "Transform" ]
+size = 340
+
+[node name="Box5" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512.327, 116.44 )
+_sections_unfolded = [ "Transform" ]
+size = 340
+
+[node name="RanbowCoin2" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 733.023, 55.6393 )
+
+[node name="RanbowCoin3" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 861.415, 177.651 )
+
+[node name="Coin" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 533.131, 58.3144 )
+
+[node name="Coin6" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 736.192, 417.507 )
+
+[node name="Coin7" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 430.246, 57.4119 )
+
+[node name="Coin8" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 843.588, 417.507 )
+
+[node name="Coin9" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 924.813, 522.196 )
+
+[node name="Coin10" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 739.802, 180.151 )
+
+[node name="Coin2" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 432.528, 414.342 )
+
+[node name="Coin3" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 738.99, 296.586 )
+
+[node name="Coin4" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 840.221, 297.017 )
+
+[node name="Spike4" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 639.204, 465.293 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spike5" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 544.161, 464.065 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spike2" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 546.564, 178.225 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="Spike3" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 620.326, 130.198 )
+
+[node name="Spike" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 620.546, 226.306 )
+rotation = -3.14159
+_sections_unfolded = [ "Transform" ]
+
+[node name="Chicken" parent="." instance=ExtResource( 5 )]
+
+position = Vector2( 938.374, 325.613 )
+
+[node name="Chicken2" parent="." instance=ExtResource( 5 )]
+
+position = Vector2( 821.66, 557.698 )
+
+

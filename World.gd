@@ -1,16 +1,15 @@
 extends Node
 
 var score = 0
-var highscore = 0
 onready var anim = get_node("AnimationPlayer")
 onready var music = get_node("music")
 onready var background = get_node("background")
 onready var l_score = get_node("Score")
-onready var l_highscore = get_node("HighScore")
 var scene_start = preload("res://Parts/Part.tscn")
 var player
-var speed = 250
+var speed = 300
 var time = 0
+var level = 0
 
 var playing = false
 
@@ -19,25 +18,38 @@ var parts = []
 
 func restart():
 	playing = false
+	speed = 0
+	level = 0
 	for p in parts:
 		p.queue_free()
 	parts.clear()
 	var part = scene_start.instance()
 	parts.append(part)
+	add_child(part)
 	music.reset()
 	background.reset()
-	add_child(part)
 	spawn_tile()
 
+func cock_block():
+	level -= 1
+	if level < 0:
+		restart()
+		anim.play_backwards("start")
+	music.set_level(level)
+	background.set_level(level)
+
 func level_up():
-	background.up()
-	music.up()
+	speed += 47
+	level += 1
+	if level > 2: level = 2
+	background.set_level(level)
+	music.set_level(level)
 
 func start():
 	if playing: return
 	time = 0
 	score = 0
-	speed = 250
+	speed = 300
 	print("starting game")
 	anim.play("start")
 	playing = true
@@ -61,7 +73,7 @@ func _ready():
 				print("Found directory: " + file_name)
 			else:
 				print("Found file: " + file_name)
-				parts_list.append(load("res://Parts/" + file_name))
+				if file_name != "Part.tscn": parts_list.append(load("res://Parts/" + file_name))
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
@@ -75,10 +87,8 @@ func _process(delta):
 		time += delta
 		if time > 1:
 			time = 0 
-			score += 1
-		speed += delta
-		l_score.text = str(score)
-	if highscore < score: highscore = score 
+			score += 10
+		l_score.text = "Score: " + str(score)
 	
 	if Input.is_action_just_pressed("start"):
 		start()
