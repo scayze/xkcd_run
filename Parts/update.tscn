@@ -12,15 +12,15 @@
 position = Vector2( 512, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 340
+size = 256
 
 [node name="DragShwag" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 342.919, 547.608 )
+position = Vector2( 319.592, 518.142 )
 
 [node name="DragShwag2" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 618.854, 545.392 )
+position = Vector2( 639.725, 519.609 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -30,15 +30,15 @@ position = Vector2( 480.045, 553.71 )
 
 [node name="Coin" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 309.39, 449.352 )
+position = Vector2( 320.44, 430.936 )
 
 [node name="Coin3" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 406.381, 368.321 )
+position = Vector2( 422.872, 280.193 )
 
 [node name="Coin4" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 526.699, 365.866 )
+position = Vector2( 515.782, 279.363 )
 
 [node name="Coin5" parent="." instance=ExtResource( 4 )]
 
@@ -54,6 +54,6 @@ position = Vector2( 934.308, 370.777 )
 
 [node name="Coin2" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 628.602, 450.58 )
+position = Vector2( 640.879, 427.253 )
 
 

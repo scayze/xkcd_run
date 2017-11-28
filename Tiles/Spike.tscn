@@ -37,7 +37,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.5192, 45.448 )
+extents = Vector2( 35.9241, 55.9222 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -65,10 +65,10 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 23
+frame = 21
 playing = true
 _sections_unfolded = [ "Transform" ]
 

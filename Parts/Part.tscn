@@ -11,6 +11,6 @@
 position = Vector2( 424, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 400
+size = 300
 
 

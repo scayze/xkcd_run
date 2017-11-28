@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 18.7386, 15.6394 )
+extents = Vector2( 23.9637, 45.5186 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -42,25 +42,20 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-position = Vector2( -0.875136, 23.7167 )
+position = Vector2( -0.875135, 2.63508 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 6
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Node2D" type="Node2D" parent="."]
-
-position = Vector2( -2.10815, 42.9537 )
-_sections_unfolded = [ "Transform" ]
 
 

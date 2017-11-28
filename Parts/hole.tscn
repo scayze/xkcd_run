@@ -15,28 +15,29 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 512, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 341
+size = 256
 
 [node name="Box2" parent="." instance=ExtResource( 1 )]
 
-position = Vector2( 519.789, 466.742 )
+position = Vector2( 519.789, 472.444 )
 size = 200
 
 [node name="Box3" parent="." instance=ExtResource( 1 )]
 
-position = Vector2( 595, 360.508 )
+position = Vector2( 599.073, 345.847 )
 _sections_unfolded = [ "Transform" ]
 size = 100
 
 [node name="Spike" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 647.806, 347.916 )
+position = Vector2( 664.911, 412.262 )
+rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
 [node name="Spike2" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 647.806, 439.179 )
-rotation = 3.14159
+position = Vector2( 541.106, 411.486 )
+rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
 [node name="RanbowCoin" parent="." instance=ExtResource( 3 )]
@@ -45,14 +46,14 @@ position = Vector2( 628.828, 246.616 )
 
 [node name="Coin" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 265.333, 425.075 )
+position = Vector2( 265.333, 430.777 )
 
 [node name="Coin2" parent="." instance=ExtResource( 4 )]
 
-position = Vector2( 885.1, 444.66 )
+position = Vector2( 881.027, 429.999 )
 
 [node name="Chicken" parent="." instance=ExtResource( 5 )]
 
-position = Vector2( 800.847, 556.739 )
+position = Vector2( 800.847, 546.15 )
 
 

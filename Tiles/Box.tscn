@@ -32,7 +32,7 @@ size = 32
 
 [node name="Sprite" type="Sprite" parent="."]
 
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 4 )

@@ -14,13 +14,13 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 512, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 340
+size = 256
 
 [node name="Box2" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 512, 230 )
 _sections_unfolded = [ "Transform" ]
-size = 280
+size = 220
 
 [node name="RanbowCoin" parent="." instance=ExtResource( 2 )]
 

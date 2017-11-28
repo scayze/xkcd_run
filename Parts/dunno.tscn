@@ -11,30 +11,30 @@
 position = Vector2( 512, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 340
+size = 256
 
 [node name="Coin" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 287.037, 546.867 )
+position = Vector2( 182.217, 544.877 )
 
 [node name="Coin2" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 370.019, 476.128 )
+position = Vector2( 265.199, 474.138 )
 
 [node name="Coin3" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 499.254, 429.875 )
+position = Vector2( 394.434, 427.885 )
 
 [node name="Coin4" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 621.687, 427.155 )
+position = Vector2( 516.867, 425.165 )
 
 [node name="Chicken" parent="." instance=ExtResource( 3 )]
 
-position = Vector2( 463.851, 562.889 )
+position = Vector2( 357.704, 544.977 )
 
 [node name="Chicken2" parent="." instance=ExtResource( 3 )]
 
-position = Vector2( 592.456, 560.168 )
+position = Vector2( 776.224, 540.929 )
 
 

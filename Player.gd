@@ -90,14 +90,16 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity,Vector2(0,-1))
 	
 	for i in range(get_slide_count()):
 		var c = get_slide_collision(i)
-		if c.collider.is_in_group("jump"):
-			print("lul")
-			change_state("jump")
+		#if c.collider.is_in_group("jump"):
+			#print("lul")
+			#change_state("jump")
+			#velocity.y = -1000
+			
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity,Vector2(0,-1))
 			
 	
 	if state == "jump" and is_on_floor():

@@ -10,21 +10,17 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RanbowCoin" parent="." instance=ExtResource( 1 )]
 
-position = Vector2( 513.727, 478.067 )
-
-[node name="Spike" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 560.735, 572.853 )
+position = Vector2( 514.924, 421.786 )
 
 [node name="Spike2" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 466.875, 572.853 )
+position = Vector2( 513.576, 552.496 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 
 position = Vector2( 512, 590 )
 _sections_unfolded = [ "Transform" ]
 platform = false
-size = 340
+size = 256
 
 

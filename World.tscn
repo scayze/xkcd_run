@@ -110,7 +110,7 @@ position = Vector2( 100, 426.579 )
 
 [node name="comic" type="Sprite" parent="."]
 
-position = Vector2( -670, 0 )
+position = Vector2( -670, -0.3 )
 z = 300
 texture = ExtResource( 3 )
 centered = false
@@ -401,15 +401,12 @@ rot_speed = 1
 
 [node name="white_bg" type="Sprite" parent="background"]
 
-position = Vector2( -199.076, -13.8309 )
-scale = Vector2( 0.66404, 649.684 )
+position = Vector2( -198.64, 2.87225 )
+scale = Vector2( 0.611179, 615.647 )
 z = -300
 texture = SubResource( 8 )
 centered = false
 _sections_unfolded = [ "Transform", "Z" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="rainbow" type="Sprite" parent="background"]
 

@@ -30,8 +30,8 @@ func set_platform_size(p_size):
 	if not sprite: return
 	if platform: sprite.region_rect = Rect2(0,0,size,4)
 	else: sprite.region_rect = Rect2(0,0,size,8)
-	shape.shape.a = Vector2((size*3.0/2.0),0)
-	shape.shape.b = Vector2(-(size*3.0/2.0),0)
+	shape.shape.a = Vector2((size*4.0/2.0),0)
+	shape.shape.b = Vector2(-(size*4.0/2.0),0)
 	bomb_shape.shape.a = shape.shape.a
 	bomb_shape.shape.b = shape.shape.b
 	#shape.shape.normal.y = (size/64)

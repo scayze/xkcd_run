@@ -30,7 +30,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32.7906, 24.6635 )
+extents = Vector2( 41.7221, 34.2019 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -62,7 +62,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.7905, 13.3446 )
+extents = Vector2( 31.7243, 13.3446 )
 
 [sub_resource type="SpriteFrames" id=6]
 
@@ -76,7 +76,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.8358, 28.5292 )
+extents = Vector2( 22.8358, 38.3667 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -97,41 +97,49 @@ invincible_period = 0.33
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
+position = Vector2( 4.47458, 4.06416 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="run" type="AnimatedSprite" parent="."]
+
+position = Vector2( 0.209444, -20 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+animation = "default"
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="run" type="AnimatedSprite" parent="."]
-
-position = Vector2( 0.209444, -20 )
-scale = Vector2( 3, 3 )
-frames = SubResource( 2 )
-animation = "default"
-_sections_unfolded = [ "Transform" ]
-
 [node name="jump" type="AnimatedSprite" parent="."]
 
 position = Vector2( 6, -16 )
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
 animation = "default"
 frame = 2
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="eat" type="AnimatedSprite" parent="."]
 
+editor/display_folded = true
 position = Vector2( 3, -17 )
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 4 )
 animation = "default"
 frame = 5
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area2D" type="Area2D" parent="eat"]
 
-position = Vector2( 12.1238, 10.1269 )
+position = Vector2( 13.8757, 9.54292 )
 scale = Vector2( 0.333333, 0.333333 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -141,9 +149,6 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape" type="CollisionShape2D" parent="eat/Area2D"]
 
@@ -157,14 +162,18 @@ __meta__ = {
 [node name="kick" type="AnimatedSprite" parent="."]
 
 position = Vector2( -4, -54 )
-scale = Vector2( 3, 3 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
 animation = "default"
 frame = 3
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area2D" type="Area2D" parent="kick"]
 
+position = Vector2( -0.729971, -4.23384 )
 scale = Vector2( 0.333333, 0.333333 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -188,6 +197,7 @@ __meta__ = {
 
 [node name="sound_eat" type="AudioStreamPlayer2D" parent="."]
 
+position = Vector2( -74.1652, -117.964 )
 stream = ExtResource( 25 )
 volume_db = -30.0
 autoplay = false
@@ -198,6 +208,7 @@ area_mask = 1
 
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
 
+position = Vector2( -89.6406, -140.447 )
 stream = ExtResource( 26 )
 volume_db = -30.0
 autoplay = false

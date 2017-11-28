@@ -7,7 +7,7 @@ onready var background = get_node("background")
 onready var l_score = get_node("Score")
 var scene_start = preload("res://Parts/Part.tscn")
 var player
-var speed = 300
+var speed = 333
 var time = 0
 var level = 0
 
