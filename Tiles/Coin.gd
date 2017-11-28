@@ -16,6 +16,5 @@ func _physics_process(delta):
 			effect()
 			monitoring = false
 			visible = false
-			#queue_free()
 
 

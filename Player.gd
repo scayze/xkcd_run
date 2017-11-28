@@ -20,8 +20,6 @@ onready var sound_eat = get_node("sound_eat")
 onready var shape = get_node("shape")
 
 var state = "run"
-#onready var anim = get_node("AnimationPlayer")
-
 
 func damage():
 	if time_till_hit < invincible_period: return
@@ -86,21 +84,13 @@ func _process(delta):
 			velocity.y -= jump_height * delta * (0.16/(0.01+time_till_jump))
 		else:
 			time_till_jump = 1
-			#if velocity.y < 0: velocity.y += 1000 * delta
 
 
 func _physics_process(delta):
 	
-	for i in range(get_slide_count()):
-		var c = get_slide_collision(i)
-		#if c.collider.is_in_group("jump"):
-			#print("lul")
-			#change_state("jump")
-			#velocity.y = -1000
-			
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity,Vector2(0,-1))
-			
+	
 	
 	if state == "jump" and is_on_floor():
 		change_state("run")

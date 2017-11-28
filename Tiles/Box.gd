@@ -20,8 +20,6 @@ func _ready():
 
 func _physics_process(delta):
 	if Engine.is_editor_hint(): return
-	#print( player.shape.global_position.y + player.shape.shape.extents.y)
-	#print(global_position.y)
 	if player.position.y + player.shape.shape.extents.y > position.y + 3.0: shape.disabled = true
 	else: shape.disabled = false
 
@@ -34,5 +32,3 @@ func set_platform_size(p_size):
 	shape.shape.b = Vector2(-(size*4.0/2.0),0)
 	bomb_shape.shape.a = shape.shape.a
 	bomb_shape.shape.b = shape.shape.b
-	#shape.shape.normal.y = (size/64)
-	#shape.shape.extents.x = size * 3.0 / 2.0
