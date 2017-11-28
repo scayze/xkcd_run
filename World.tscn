@@ -373,7 +373,7 @@ bus = "Master"
 [node name="rythm1" type="AudioStreamPlayer" parent="music"]
 
 stream = ExtResource( 6 )
-volume_db = -80.0
+volume_db = -30.0
 autoplay = true
 mix_target = 0
 bus = "Master"

@@ -16,5 +16,5 @@ func _physics_process(delta):
 
 func spawn_explosion():
 	var explosion = scene_explosion.instance()
-	explosion.position = position + Vector2(5,50)
+	explosion.position = position + Vector2(5,70)
 	get_parent().add_child(explosion)

@@ -13,11 +13,8 @@ func _ready():
 
 func reset():
 	melody.volume_db = -80
-	rythm1.volume_db = -80
 	rythm2.volume_db = -80
 
 func set_level(level):
-	if level == 1:
-		rythm2.volume_db = volume
-		rythm1.volume_db = volume
-	elif level >= 2: melody.volume_db = volume
+	if level == 1:    rythm2.volume_db = volume
+	elif level >= 2:  melody.volume_db = volume
