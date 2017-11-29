@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tiles/Box.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Tiles/Coin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tiles/Chicken.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/Prooper.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,28 +12,8 @@ _sections_unfolded = [ "Transform" ]
 platform = false
 size = 256
 
-[node name="Coin" parent="." instance=ExtResource( 2 )]
+[node name="Prooper" parent="." instance=ExtResource( 2 )]
 
-position = Vector2( 182.217, 544.877 )
-
-[node name="Coin2" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 265.199, 474.138 )
-
-[node name="Coin3" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 394.434, 427.885 )
-
-[node name="Coin4" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 516.867, 425.165 )
-
-[node name="Chicken" parent="." instance=ExtResource( 3 )]
-
-position = Vector2( 357.704, 544.977 )
-
-[node name="Chicken2" parent="." instance=ExtResource( 3 )]
-
-position = Vector2( 776.224, 540.929 )
+position = Vector2( 1120, 64 )
 
 

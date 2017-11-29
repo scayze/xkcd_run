@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tiles/Coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/Minispike.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512, 590 )
+_sections_unfolded = [ "Transform" ]
+platform = false
+size = 256
+
+[node name="Coin" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 192, 384 )
+z = -1
+
+[node name="Spike" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 192, 560 )
+z = -1
+
+[node name="Spike2" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 512, 560 )
+z = -1
+
+[node name="Coin2" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 512, 384 )
+z = -1
+
+[node name="Spike3" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 816, 560 )
+z = -1
+
+[node name="Coin3" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 816, 384 )
+z = -1
+
+

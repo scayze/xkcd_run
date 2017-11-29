@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nowhere.png-6bb839fe5414366413ee01995b5f525e.stex"
+path="res://.import/74c90dc5-6b57-4131-b326-30e8b7571ce1.png-90ee9d5a63311bfdf08d1669ee1c7916.stex"
 
 [params]
 
@@ -11,7 +11,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

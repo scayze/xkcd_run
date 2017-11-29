@@ -1,0 +1,64 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Tiles/Spike.gd" type="Script" id=1]
+[ext_resource path="res://res/minispike/0d30f2f8-43a1-4661-9671-789f609e2854.png" type="Texture" id=2]
+[ext_resource path="res://res/minispike/0dce4524-3f49-49a1-9f65-6207e080c5f8.png" type="Texture" id=3]
+[ext_resource path="res://res/minispike/1c14f0de-0746-4b40-a93d-e8c22bc5d8d9.png" type="Texture" id=4]
+[ext_resource path="res://res/minispike/4de0cc54-eb03-4e37-8e55-dd1f06b5f4a5.png" type="Texture" id=5]
+[ext_resource path="res://res/minispike/5c15b594-6c54-48f0-9c17-43a1045f7d23.png" type="Texture" id=6]
+[ext_resource path="res://res/minispike/6b9a816d-a67e-4735-8900-39ec55164c8e.png" type="Texture" id=7]
+[ext_resource path="res://res/minispike/6b21d176-163b-40a6-acc8-27eccfc4b1a8.png" type="Texture" id=8]
+[ext_resource path="res://res/minispike/6cce8a4e-0ed1-4a56-9537-72b061069b63.png" type="Texture" id=9]
+[ext_resource path="res://res/minispike/8d847932-ca5b-42fe-a735-ad18e508109a.png" type="Texture" id=10]
+[ext_resource path="res://res/minispike/11de5703-f758-4e4c-aaf1-792f560d3349.png" type="Texture" id=11]
+[ext_resource path="res://res/minispike/17a9c1d5-f30e-4f89-a9d6-d4c2b37ba89d.png" type="Texture" id=12]
+[ext_resource path="res://res/minispike/74c90dc5-6b57-4131-b326-30e8b7571ce1.png" type="Texture" id=13]
+[ext_resource path="res://res/minispike/279b5298-15ba-43c4-8423-0adfa0ed664f.png" type="Texture" id=14]
+[ext_resource path="res://res/minispike/563c5275-cfcc-468d-a948-0bbb5c50f981.png" type="Texture" id=15]
+[ext_resource path="res://res/minispike/a30dcc59-60cc-4926-86c5-6ca56e91fc35.png" type="Texture" id=16]
+[ext_resource path="res://res/minispike/b36e8d3c-196d-4836-b969-bbb59429d65b.png" type="Texture" id=17]
+[ext_resource path="res://res/minispike/c4384b4a-a007-4a44-b340-5e8d91ceb3be.png" type="Texture" id=18]
+[ext_resource path="res://res/minispike/d5ceb39d-7655-4b08-8600-e529f3c9fca8.png" type="Texture" id=19]
+[ext_resource path="res://res/minispike/e8361262-06e5-4631-a725-cf3cead70489.png" type="Texture" id=20]
+[ext_resource path="res://res/minispike/ea6290a2-b8c5-4ccf-9c24-e298bc107d9b.png" type="Texture" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35.9241, 55.9222 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[node name="Spike" type="Area2D"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 8
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+

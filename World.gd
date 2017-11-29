@@ -1,12 +1,15 @@
 extends Node
 
 var score = 0
+var highscore = 0
 onready var anim = get_node("AnimationPlayer")
 onready var music = get_node("music")
 onready var background = get_node("background")
 onready var l_score = get_node("Score")
+onready var l_highscore = get_node("HighScore")
 var scene_start = preload("res://Parts/Part.tscn")
 var player
+var base_speed = 333
 var speed = 333
 var time = 0
 var level = 0
@@ -26,8 +29,8 @@ func restart():
 	var part = scene_start.instance()
 	parts.append(part)
 	add_child(part)
-	music.reset()
-	background.reset()
+	music.set_level(level)
+	background.set_level(level)
 	spawn_tile()
 
 func cock_block():
@@ -49,7 +52,7 @@ func start():
 	if playing: return
 	time = 0
 	score = 0
-	speed = 300
+	speed = base_speed
 	print("starting game")
 	anim.play("start")
 	playing = true
@@ -89,6 +92,9 @@ func _process(delta):
 			time = 0 
 			score += 10
 		l_score.text = "Score: " + str(score)
+		if score > highscore:
+			highscore = score
+			l_highscore.text = "Highcore: " + str(highscore)
 	
 	if Input.is_action_just_pressed("start"):
 		start()

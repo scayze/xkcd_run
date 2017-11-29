@@ -91,13 +91,14 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
-jump_height = 1350
-gravity = 1800.0
+jump_height = 2000
+gravity = 2500.0
 invincible_period = 0.33
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
-position = Vector2( 4.47458, 4.06416 )
+position = Vector2( 0.406266, 9.77959 )
+scale = Vector2( 0.760169, 0.879988 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -114,6 +115,7 @@ __meta__ = {
 
 [node name="jump" type="AnimatedSprite" parent="."]
 
+visible = false
 position = Vector2( 6, -16 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
@@ -127,6 +129,7 @@ __meta__ = {
 [node name="eat" type="AnimatedSprite" parent="."]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 3, -17 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 4 )
@@ -161,6 +164,7 @@ __meta__ = {
 
 [node name="kick" type="AnimatedSprite" parent="."]
 
+visible = false
 position = Vector2( -4, -54 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )

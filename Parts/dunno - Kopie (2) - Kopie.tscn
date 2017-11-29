@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tiles/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tiles/Minispike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/RainbowCoin.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+_sections_unfolded = [ "Z" ]
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 512, 590 )
+_sections_unfolded = [ "Transform" ]
+platform = false
+size = 256
+
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 64, 448 )
+
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 416, 448 )
+
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 768, 448 )
+
+[node name="Spike" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 64, 560 )
+z = -1
+_sections_unfolded = [ "Z" ]
+
+[node name="Spike2" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 416, 560 )
+z = -1
+_sections_unfolded = [ "Z" ]
+
+[node name="Spike3" parent="." instance=ExtResource( 2 )]
+
+position = Vector2( 768, 560 )
+z = -1
+_sections_unfolded = [ "Z" ]
+
+[node name="Coin" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 240, 528 )
+
+[node name="Coin2" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 592, 528 )
+
+[node name="RanbowCoin" parent="." instance=ExtResource( 4 )]
+
+position = Vector2( 912, 224 )
+
+
